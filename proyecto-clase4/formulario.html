@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <!--action, indica a que servidor o dirección apunta para almacenar los datos cargados en el formulario-->
+
+        <fieldset>
+            <!--permite organizar los campos dentro del formulario en grupos que haran la recolección de los datos-->
+
+            <legend>
+                <h1>Registro de usuario - Ingrese sus datos</h1>
+            </legend>
+            <!--con legend,se le da un titulo al formulario-->
+
+            <p>
+                <label for="nombres">Nombres</label>
+                <input type="text" id="nombres" placeholder="Nombres" size="50px" minlength="3" maxlength="30" required>
+                <!--el campo de captura de datos es a través de la etiqueta input, a través del atributo id que será procesado por el servicio o servidor que haga la captura de datos o por parte del mismo para hacer algunas acciones-->
+            </p>
+            <p>
+                <label for="apellidos">Apellidos</label>
+                <input type="text" id="apellidos" placeholder="Apellidos" size="50px" minlength="3" maxlength="30"
+                    required>
+            </p>
+            <p>
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" placeholder="usuario@example.com" size="50px" minlength="3"
+                    maxlength="30" required>
+            </p>
+            <p>
+                <label for="telefono">Número telefónico</label>
+                <input type="tel" id="telefono" placeholder="N&uacute;mero telef&oacute;nico"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <label>Ejem. 123-456-7890</label>
+            </p>
+            <p>
+                <!--name: identifica un control dentro de un formulario. Este atributo nos va a resultar necesario para poder rescatar la información. id y name son cosas diferentes pero no hay problema que tengan el mismo valor.-->
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direc" name="direc" size="50" minlength="5" maxlength="30">
+            </p>
+            <p>
+                <label for="postal">Código Postal</label>
+                <input type="number" id="postal" name="postal" minlength="3" maxlength="6">
+            </p>
+            <p>
+                <label for="nacimiento">Fecha de Nacimiento</label>
+                <input type="date" id="nacimiento" placeholder="Fecha de Nacimiento">
+            </p>
+            <p>
+                <!--El radio o radio button es una entrada que permite seleccionar exclusivamente entre un conjunto de alternativas. Es importante colocar una etiqueta (label) y enlazarla con el atributo for al checked con el id, donde el valor del for y el valor del id deben coincidir.-->
+                <input type="radio" id="F" name="genero"><label for="genero">Femenino</label>
+                <input type="radio" id="M" name="genero"><label for="genero">Masculino</label>
+                <!--<label for="genero">Genero</label>
+                <input type="radio" id="femenino" name="genero">femenino
+                <input type="radio" id="masculino" name="genero">Masculino-->
+            </p>
+            <p>
+                <!--Lista con grupos
+Para crear una lista con grupos utilizamos la etiqueta <select> y la etiqueta <optgroup> para definir los grupos de opciones si fuera necesario.-->
+                <label for="ocupacion">Ocupación</label>
+                <select name="ocupacion" id="ocupacion">
+                    <option value=""></option>
+                    <optgroup label="Estudia">
+                        <option value="abogado">Abogado</option>
+                        <option value="ingeniero">Ingeniero</option>
+                        <option value="medico">Médico</option>
+                        <option value="arquitecto">Arquitecto</option>
+                    </optgroup>
+                    <optgroup label="Trabaja">
+                        <option value="abogado">Abogado</option>
+                        <option value="ingeniero">Ingeniero</option>
+                        <option value="medico">Médico</option>
+                        <option value="arquitecto">Arquitecto</option>
+                    </optgroup>
+                </select>
+                <!--Lista de selección múltiple
+Para crear una lista de selección múltiple usamos la etiqueta  <select> que permite seleccionar múltiples elementos. El primer el elemento se selecciona con un click, pero los adicionales se seleccionan usando (ctrl+click) ó (cmd+click) según el navegador y sistema operativo. 
+                    <select name="ocupacion" multiple="true">
+                    <option value="musico">Músico</option>
+                    <option value="pintor">Pintor</option>
+                    <option value="actor">Actor</option>
+                    <option value="escultor">Escultor</option>
+                </select>-->
+            </p>
+            <p>
+                <label for="color">Selecciona la información que deseas:</label>
+                <!--El checkbox es una caja le permite al usuario activar una opción o no. Es importante colocar una etiqueta (label) y enlazarla con el atributo for al checkbox a través de su id, donde el valor del for y el valor del id deben coincidir.-->
+                <input type="checkbox" id="deportes" name="deportes">deportes
+                <input type="checkbox" id="cocina" name="cocina">cocina
+                <input type="checkbox" id="informatica" name="informatica">Informática
+                <input type="checkbox" id="salud" name="salud">Salud
+            </p>
+            <p>
+                <label for="imagen">Seleeciona tu imagen de perfil</label>
+                <input type="file" id="imagen" name="imagen">
+            </p>
+            <p>
+                <label for="pass">Contraseña</label>
+                <input type="password" id="pass" name="pass" pattern=".{8,}" required>
+                <!--atributo type="password", hará que no se muestren los caracteres cuando el usuario escribe. -->
+                <label for="pass_confirm">Confirmar Contraseña</label>
+                <input type="password" id="pass_confirm" name="pass_confirm" pattern=".{8,n}" required>
+            </p>
+            <legend>Escribe una descrición de tu persona</legend>
+            <textarea name="descripcion" id="descripcion" cols="100" rows="10"></textarea>
+            <p>
+                <input type="checkbox" name="terminos" id="terminos" />
+                <label for="terminos">Acepto términos y condiciones</label><br />
+            </p>
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Reset">
+            </p>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
